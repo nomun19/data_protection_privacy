@@ -56,5 +56,40 @@ However, the data publisher deos not know how much the adversary knows.
 each of which is consistent with the full joint distributions.
 
 
+### l-Diversity
+- l-Diversity no longer requires knowledge of the full distribution of the sensitive and nonsensitive attributes.
+- l-Diversity does not require full knowledge  of attribute distributions.
+- Instance-level knowledge is automatically considered.
+- Protects against different adversaries with varying background knowledge.
+
+### Implementing Privacy Preserving Data publishing
+
+Theorem : Bayes-optimal privacy does not satisfy the monotonicity property.
+Theorem : Monotonicity of Entropy l-diversity
+Entropy l-diversity satisfies the monotonicity property: if a table T* satisfies enropy l-diversity
+then any generalization T** of T* also satisfies entropy l-diversity
+
+### Experiments
+an implementation of Incognito for generating both k-anonymous and ℓ-diverse tables. 
+The datasets used are the Adult Database and Lands End Database. The experiments 
+include testing a homogeneity attack, comparing performance, and evaluating utility 
+metrics such as generalization height, average group size, and discernibility.
+
+In a homogeneity attack, they found vulnerable tables in both databases, revealing 
+sensitive information. The experiments compared the running times of entropy 
+ℓ-diversity and k-anonymity, showing similar performance. Utility metrics, 
+including generalization height, average group size, and discernibility, 
+were used to assess the quality of ℓ-diverse and k-anonymous tables.
+
+For the Adult Database, they observed that ℓ-diversity tables had comparable utility 
+to k-anonymity, with recursive ℓ-diversity sometimes offering better utility. 
+The experiments also considered a subsample of the Adult Database with less data skew, 
+showing that ℓ-diversity could trade off some utility for privacy but, in some cases, 
+offered better utility than entropy ℓ-diversity.
 
 
+### Conclusion
+The paper highlights that k-anonymized datasets have vulnerabilities because they lack 
+diversity in sensitive attributes, making them susceptible to privacy attacks. 
+To address this, the paper introduces ℓ-diversity, a framework offering stronger 
+privacy guarantees.
